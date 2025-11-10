@@ -5,6 +5,8 @@
   "scripts": {
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration production",
+    "deploy": "ng build --configuration production --base-href /saravanakumar-portfolio/ && npx angular-cli-ghpages --dir=dist/saravanakumar-portfolio",
     "test": "ng test"
   },
   "dependencies": {
@@ -25,6 +27,7 @@
   "devDependencies": {
     "@angular/cli": "^17.0.0",
     "@angular/compiler-cli": "^17.0.0",
+    "angular-cli-ghpages": "^2.0.3",
     "typescript": "~5.2.2"
   }
 }
