@@ -7,6 +7,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
+
 const routes: Routes = [
   { path: '', component: AboutComponent },
   { path: 'skills', component: SkillsComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: '**', redirectTo: '' }
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, { enableTracing: false })
   ],
   providers: [],
   bootstrap: [AppComponent]
