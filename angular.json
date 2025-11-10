@@ -1,0 +1,48 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "projects": {
+    "saravanakumar-portfolio": {
+      "projectType": "application",
+      "root": "",
+      "sourceRoot": "src",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/saravanakumar-portfolio",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ]
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "saravanakumar-portfolio:build"
+          },
+          "configurations": {
+    "production": {
+      "buildTarget": "saravanakumar-portfolio:build:production"
+    },
+    "development": {
+      "buildTarget": "saravanakumar-portfolio:build:development"
+    }
+  }
+        }
+      }
+    }
+  },
+  "defaultProject": "saravanakumar-portfolio",
+  "cli": {
+    "analytics": false
+  }
+}

@@ -1,0 +1,244 @@
+/* About Component Styles */
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(40px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+.hero-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  margin-bottom: var(--space-xl);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--glass-shadow);
+  transition: all var(--transition-normal);
+}
+
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hero-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  border-color: var(--primary-solid);
+}
+
+.hero-card h2 {
+  position: relative;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  background: var(--primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  margin-top: 0;
+}
+
+.hero-card .subtitle {
+  position: relative;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  font-weight: 300;
+}
+
+.description {
+  position: relative;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+  text-align: left;
+}
+
+.specialties {
+  position: relative;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  border-left: 4px solid var(--primary-solid);
+}
+
+.specialties strong {
+  color: var(--primary-light);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.achievements-section {
+  position: relative;
+  margin: var(--space-xl) 0;
+  padding: var(--space-xl) 0;
+  border-top: 1px solid var(--glass-border);
+}
+
+.achievements-section h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--primary-light);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.achievement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  transition: all var(--transition-normal);
+}
+
+.achievement-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(102, 126, 234, 0.2);
+  border-color: var(--primary-solid);
+}
+
+.achievement-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.achievement-content h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.achievement-content p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.education-section {
+  position: relative;
+  margin: var(--space-xl) 0;
+  padding: var(--space-xl) 0;
+  border-top: 1px solid var(--glass-border);
+}
+
+.education-section h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--primary-light);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.education-card {
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.education-card h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.education-card p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0.3rem 0;
+}
+
+.graduation-year {
+  color: var(--primary-light) !important;
+  font-weight: 500;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  text-align: center;
+  border: 1px solid var(--glass-border);
+  transition: all var(--transition-normal);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent-solid);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-card {
+    padding: var(--space-lg);
+  }
+  
+  .hero-card h2 {
+    font-size: 2rem;
+  }
+}

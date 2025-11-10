@@ -1,0 +1,40 @@
+<div class="skills-container">
+  <div class="skills-header">
+    <h2 class="gradient-text">Technical Skills</h2>
+    <p class="skills-subtitle">Technologies I work with to bring ideas to life</p>
+  </div>
+
+  <div class="skills-grid">
+    <div *ngFor="let category of skillCategories; let i = index" 
+         class="skill-category" 
+         [style.animation-delay]="(i * 0.2) + 's'">
+      <div class="category-header">
+        <h3>{{ category.title }}</h3>
+      </div>
+      
+      <div class="skills-list">
+        <div *ngFor="let skill of category.skills; let j = index" 
+             class="skill-item"
+             [style.animation-delay]="((i * 0.2) + (j * 0.1)) + 's'">
+          <div class="skill-info">
+            <span class="skill-name">{{ skill.name }}</span>
+            <span class="skill-percentage">{{ skill.level }}%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" 
+                 [style.width]="skill.level + '%'"
+                 [attr.data-category]="category.color">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="skills-summary">
+    <div class="summary-card">
+      <h3>Continuous Learning</h3>
+      <p>Always staying updated with the latest technologies and best practices in web development. Currently exploring advanced Angular patterns, Web Components, and modern CSS techniques.</p>
+    </div>
+  </div>
+</div>

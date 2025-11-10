@@ -1,0 +1,65 @@
+<div class="projects-container">
+  <div class="projects-header">
+    <h2 class="gradient-text">Featured Projects</h2>
+    <p class="projects-subtitle">A showcase of my technical skills and problem-solving abilities</p>
+  </div>
+
+  <div class="projects-grid">
+    <div *ngFor="let project of projects; let i = index" 
+         class="project-card" 
+         [style.animation-delay]="(i * 0.2) + 's'">
+      
+      <div class="project-header">
+        <div class="project-title">
+          <h3>{{ project.title }}</h3>
+          <span class="status-badge" [class]="project.status">{{ project.status | titlecase }}</span>
+        </div>
+        <span class="category-tag">{{ project.category }}</span>
+      </div>
+
+      <div class="project-description">
+        <p>{{ project.description }}</p>
+      </div>
+
+      <div class="project-highlights">
+        <h4>Key Features:</h4>
+        <ul>
+          <li *ngFor="let highlight of project.highlights">{{ highlight }}</li>
+        </ul>
+      </div>
+
+      <div class="project-technologies">
+        <h4>Technologies Used:</h4>
+        <div class="tech-stack">
+          <span *ngFor="let tech of project.technologies" class="tech-chip">{{ tech }}</span>
+        </div>
+      </div>
+
+      <div class="project-actions">
+        <button class="action-btn primary">View Details</button>
+        <button class="action-btn secondary">Live Demo</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-summary">
+    <div class="summary-stats">
+      <div class="stat-item">
+        <span class="stat-number">{{ projects.length }}</span>
+        <span class="stat-label">Total Projects</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">{{ getCompletedProjects() }}</span>
+        <span class="stat-label">Completed</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">{{ getOngoingProjects() }}</span>
+        <span class="stat-label">Ongoing</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">{{ getTotalTechnologies() }}</span>
+        <span class="stat-label">Technologies</span>
+      </div>
+    </div>
+  </div>
+</div>

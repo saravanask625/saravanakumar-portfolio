@@ -1,0 +1,25 @@
+<header>
+  <h1>Saravanakumar Rajendran</h1>
+  <p>Front-End UI Developer • Angular • TypeScript</p>
+  <p>Crafting Beautiful Digital Experiences</p>
+  <p>Coimbatore, India • <a href="mailto:saravana.sk625&#64;gmail.com" style="color:inherit;text-decoration:underline">saravana.sk625&#64;gmail.com</a></p>
+</header>
+
+<div class="container">
+  <nav class="tabs">
+    <button [class.active]="isActive('')" (click)="navigate('')">About</button>
+    <button [class.active]="isActive('skills')" (click)="navigate('skills')">Skills</button>
+    <button [class.active]="isActive('experience')" (click)="navigate('experience')">Experience</button>
+    <!--<button [class.active]="isActive('projects')" (click)="navigate('projects')">Projects</button>-->
+    <button [class.active]="isActive('contact')" (click)="navigate('contact')">Contact</button>
+  </nav>
+  
+  <div class="content-area">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Saravanakumar Rajendran</p>
+  <p>Built with ❤️ using Angular & Modern CSS</p>
+</footer>

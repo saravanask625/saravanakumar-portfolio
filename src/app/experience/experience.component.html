@@ -1,0 +1,65 @@
+<div class="experience-container">
+  <div class="experience-header">
+    <h2 class="gradient-text">Professional Experience</h2>
+    <p class="experience-subtitle">{{ getTotalExperience() }} of hands-on development experience</p>
+  </div>
+
+  <div class="timeline">
+    <div *ngFor="let role of roles; let i = index" class="timeline-item" [style.animation-delay]="(i * 0.3) + 's'">
+      <div class="timeline-marker">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line" *ngIf="i !== roles.length - 1"></div>
+      </div>
+      
+      <div class="experience-card">
+        <div class="card-header">
+          <div class="role-info">
+            <h3 class="role-title">{{ role.title }}</h3>
+            <h4 class="company-name">{{ role.company }}</h4>
+            <div class="role-details">
+              <span class="period">{{ role.period }}</span>
+              <span class="location">{{ role.location }}</span>
+            </div>
+          </div>
+          <div class="status-badge" [class.current]="i === 0">
+            {{ i === 0 ? 'Current' : 'Previous' }}
+          </div>
+        </div>
+        
+        <div class="achievements">
+          <h5>Key Achievements & Responsibilities:</h5>
+          <ul class="achievements-list">
+            <li *ngFor="let point of role.points">{{ point }}</li>
+          </ul>
+        </div>
+        
+        <div class="technologies" *ngIf="role.technologies">
+          <h5>Technologies Used:</h5>
+          <div class="tech-tags">
+            <span *ngFor="let tech of role.technologies" class="tech-tag">{{ tech }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="experience-summary">
+    <div class="summary-card">
+      <h3>Career Highlights</h3>
+      <div class="highlights-grid">
+        <div class="highlight-item">
+          <span class="highlight-number">4</span>
+          <span class="highlight-label">Years Experience</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-number">8+</span>
+          <span class="highlight-label">Technologies</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-number">4+</span>
+          <span class="highlight-label">Projects</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
